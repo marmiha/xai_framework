@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='xai_framework',
@@ -7,7 +7,5 @@ setup(
     author='',
     author_email='',
     url='https://github.com/marmiha/xai_framework',
-    packages=[
-        'xai_framework'
-    ],
+    packages=find_packages(),
 )

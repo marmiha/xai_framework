@@ -1,6 +1,9 @@
 # xai_framework
 
-## Platform Specific Requirements
+## Requirements
 
-If using OSX, you will need to install the following and then run `brew install gawk` as the default `awk` does not support the same functionalities used in the Makefile.
+If you're using `OSX` and `brew` package manager run:
 
+``` bash
+brew install gawk 
+```

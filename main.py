@@ -1,7 +1,7 @@
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import LinearSVC
-from xai_framework.methods.shap import ShapExplainabilityMethod
+from xai_framework.methods.shap_method import ShapMethod
 from xai_framework.types import Dataset
 from xai_framework.utils import process_feature_importance
 
@@ -21,12 +21,14 @@ dataset = Dataset(
     feature_names=iris.feature_names
 )
 
-shap = ShapExplainabilityMethod()
+shap = ShapMethod()
 
-process_feature_importance(
+importance = process_feature_importance(
     learner=model,
     dataset=dataset,
     methods=[
         shap
     ]
 )
+
+print(importance)

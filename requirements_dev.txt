@@ -1,5 +1,8 @@
-# local package
+# Local package
 -e .
 
+# Other packages
 jupyter
 ipywidgets
+matplotlib
+python-dotenv

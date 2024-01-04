@@ -1,5 +1,6 @@
 from xai_framework.types import Writer
 import pandas as pd
+import os
 
 class LocalWriter(Writer):
     """
@@ -16,7 +17,7 @@ class LocalWriter(Writer):
         super().__init__(name="LocalWriter")
         self.output_dir = output_dir
     
-    def write(self, df: pd.DataFrame):
+    def write(self, df: pd.DataFrame, filename: str):
         """
         Writes the given DataFrame to a CSV file in the specified output directory.
 
@@ -24,5 +25,5 @@ class LocalWriter(Writer):
             df (pd.DataFrame): The DataFrame to be written.
 
         """
-        df.to_csv(self.output_dir + "output.csv", index=False)
+        df.to_csv(os.path.join(self.output_dir, filename), index=False)
 

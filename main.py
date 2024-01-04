@@ -32,3 +32,9 @@ importance = process_feature_importance(
 )
 
 print(importance)
+
+from xai_framework.writers.local_writer import LocalWriter
+
+writer = LocalWriter(output_dir="./output")
+writer.write(importance, "feature_importance.csv")
+

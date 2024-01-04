@@ -78,7 +78,7 @@ class Writer(ABC):
     def __init__(self, name: str):
         self.name = name
         
-    def write(self, df: pd.DataFrame):
+    def write(self, df: pd.DataFrame, filename: str):
         """
         Write the df to the output.
 

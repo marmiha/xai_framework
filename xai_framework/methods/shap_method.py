@@ -23,4 +23,5 @@ class ShapMethod(ExplainabilityMethod):
         masker = shap.maskers.Independent(X)
         explainer = shap.Explainer(model.predict, masker)
 
+        print(explainer)
         return explainer(X).values

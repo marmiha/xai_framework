@@ -12,7 +12,7 @@ endif
 ##@ Environment
 .PHONY: .venv
 .venv: ## Create a Python virtual environment
-	$(PYTHON_INTERPRETER) -m .venv .venv
+	$(PYTHON_INTERPRETER) -m venv .venv
 
 .PHONY: clean
 clean: ## Remove Python file artifacts and .venv

@@ -4,3 +4,5 @@ xai_framework.egg-info/
 venv
 .DS_Store
 .venv
+notebooks/sandbox.ipynb
+.vscode/settings.json

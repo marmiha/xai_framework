@@ -5,7 +5,12 @@ import os
 
 # The saved datasets. Add the additional datasets here.
 class DatasetFilename(Enum):
-    IRIS = "iris.csv"
+    ADULT = "real/adult.csv"
+    BOSTON_HOUSING = "real/boston_housing.csv"
+    BREAST_CANCER = "real/breast_cancer.csv"
+    FOREST_FIRES = "real/forest_fires.csv"
+    IRIS = "real/iris.csv"
+    TITANIC = "real/titanic.csv"
 
     def target(self) -> str:
         return targets[self.value]
@@ -15,7 +20,12 @@ class DatasetFilename(Enum):
 
 # Target columns for each dataset
 targets = {
-    "iris.csv": "Species"
+    "real/adult.csv": "income",
+    "real/boston_housing.csv": "MEDV",
+    "real/breast_cancer.csv": "Class",
+    "real/forest_fires.csv": "area",
+    "real/iris.csv": "Species",
+    "real/titanic.csv": "Survived"
 }
 
 class DatasetLoader:

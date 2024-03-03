@@ -14,7 +14,7 @@ class DatasetFilename(Enum):
     TITANIC = "real/titanic.csv"
 
     # old synthetic datasets
-    SYN_1 = "synthetic/syn_ds.csv"
+    EXAMPLE_SYN = "synthetic/example_syn.csv"
 
     def target(self) -> str:
         return targets[self.value]
@@ -30,7 +30,7 @@ targets = {
     "real/forest_fires.csv": "area",
     "real/iris.csv": "Species",
     "real/titanic.csv": "Survived",
-    "synthetic/syn_ds.csv" : "y"
+    "synthetic/example_syn.csv" : "y"
 }
 
 class DatasetLoader:

@@ -13,14 +13,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
-from rule import get_rule
-from symexpr import generate_expression, gen_classification_symbolic, eval_multinomial
-from types import Dataset
+from .rule import get_rule
+from .symexpr import generate_expression, gen_classification_symbolic, eval_multinomial
+from xai_framework.types import Dataset
 
 
 def generate_syntetic_rule_based_classifier(n_samples=1000, n_features=2, n_all_features=2, random_state=1, factor=0,
                                             sampling=0.5, explore_domain=False):
-    X, y = make_classification(n_samples=n_samples, n_features=n_features, n_informative=n_features, n_redundant=0,
+    X, y = make_classification(n_samples=n_samples, n_features=n_all_features, n_informative=n_features, n_redundant=0,
                                n_repeated=0, random_state=random_state, n_clusters_per_class=1)
 
     X0 = copy.deepcopy(X)
@@ -148,6 +148,9 @@ def generate_synthetic_linear_classifier(expr=None, n_features=2, n_all_features
                 break
 
     X, Y, Y1 = gen_classification_symbolic(expr, n_samples=n_samples, flip_y=0.0)
+
+    # TODO: add the noisy features to X at this point
+
     class_name = 'class'
     class_values = [i for i in range(2)]
 

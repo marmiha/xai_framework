@@ -9,3 +9,4 @@ notebooks/sandbox.ipynb
 
 datasets/synthetic/*
 !datasets/synthetic/example_syn.csv
+.python-version

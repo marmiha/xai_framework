@@ -6,3 +6,4 @@ venv
 .venv
 notebooks/sandbox.ipynb
 .vscode/settings.json
+.python-version

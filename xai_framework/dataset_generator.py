@@ -7,11 +7,33 @@ from xai_framework.types import Dataset
 
 
 class DatasetGeneratorType(Enum):
+    """Generated dataset type identifier.
+
+    This class represents the different types of generated datasets that can be used in the XAI framework.
+
+    Attributes:
+        RuleBased (str): Represents a rule-based generated dataset.
+        Linear (str): Represents a linear generated dataset.
+    """
     RuleBased = 'RuleBased'
     Linear = 'Linear'
 
 
 class DatasetGenerator:
+    """Generates synthetic datasets for explainable AI experiments.
+
+    Attributes:
+        type (DatasetGeneratorType): The type of dataset generator.
+        n_features (int): The number of features in the dataset.
+        n_samples (int): The number of samples in the dataset.
+        dataset_name (str): The name of the dataset.
+        n_irrelevant_features (int, optional): The number of irrelevant features in the dataset. Defaults to 0.
+        expression (type, optional): The expression used for generating the dataset. Defaults to None.
+        random_state (type, optional): The random state used for generating the dataset. Defaults to None.
+        noise_level_rb (type, optional): The noise level used for generating the dataset. Defaults to None.
+        save (bool, optional): Indicates whether to save the generated dataset. Defaults to False.
+    """
+
     def __init__(
         self,
         type: DatasetGeneratorType,
@@ -23,6 +45,19 @@ class DatasetGenerator:
         noise_level_rb=None,
         save=False
     ):
+        """Initializes a DatasetGenerator instance.
+
+        Args:
+            type (DatasetGeneratorType): The type of dataset generator.
+            n_features (int): The number of features in the dataset.
+            n_samples (int): The number of samples in the dataset.
+            dataset_name (str): The name of the dataset.
+            n_irrelevant_features (int, optional): The number of irrelevant features in the dataset. Defaults to 0.
+            expression (type, optional): The expression used for generating the dataset. Defaults to None.
+            random_state (type, optional): The random state used for generating the dataset. Defaults to None.
+            noise_level_rb (type, optional): The noise level used for generating the dataset. Defaults to None.
+            save (bool, optional): Indicates whether to save the generated dataset. Defaults to False.
+        """        
         self.type = type
         self.n_features = n_features
         self.n_samples = n_samples
@@ -34,6 +69,11 @@ class DatasetGenerator:
         self.save = save
 
     def generate_dataset(self):
+        """Generates a synthetic dataset based on the specified parameters.
+
+        Returns:
+            Dataset: The generated dataset.
+        """
         match self.type:
             case DatasetGeneratorType.RuleBased:
                 sc = generate_syntetic_rule_based_classifier(

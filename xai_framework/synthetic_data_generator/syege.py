@@ -1,3 +1,4 @@
+# Code ownership: https://github.com/riccotti/SyntheticExplanationGenerator
 import copy
 import numpy as np
 import matplotlib.pyplot as plt

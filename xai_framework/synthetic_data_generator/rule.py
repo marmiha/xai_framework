@@ -1,3 +1,4 @@
+# Code ownership: https://github.com/riccotti/SyntheticExplanationGenerator
 import json
 import numpy as np
 from collections import defaultdict

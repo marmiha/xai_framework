@@ -1,6 +1,6 @@
+# Code ownership: https://github.com/riccotti/SyntheticExplanationGenerator
 import numpy as np
 from sympy import sympify, Symbol, re
-
 
 # def generate_expression(scope, num_operations=10, p_binary=0.7, p_parenthesis=0.3):
 #     unaries = ['sqrt(%s)', 'exp(%s)', 'log(%s)', 'sin(%s)', 'cos(%s)', 'tan(%s)',

@@ -6,4 +6,6 @@ venv
 .venv
 notebooks/sandbox.ipynb
 .vscode/settings.json
+datasets/synthetic/*
+!datasets/synthetic/example_syn.csv
 .python-version

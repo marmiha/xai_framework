@@ -36,8 +36,7 @@ class CosineSimilarity(EvaluationMetric):
         """
         return cosine_similarity(y_true, y_pred)
     
-    
-class EuclidianDistance(EvaluationMetric):
+class EuclideanDistance(EvaluationMetric):
     name = "Euclidian Distance"
 
     def evaluate(self, y_true: np.ndarray, y_pred: np.ndarray) -> float:

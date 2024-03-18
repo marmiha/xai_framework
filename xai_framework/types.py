@@ -58,6 +58,37 @@ class ExplainabilityMethod(ABC):
 
     def __str__(self):
         return self.name
+    
+class EvaluationMetric(ABC):
+    """
+    Base class for evaluation metrics.
+
+    Attributes:
+    - name: The name of the evaluation metric.
+
+    Methods:
+    - evaluate(y_true: np.ndarray, y_pred: np.ndarray) -> float:
+        Evaluate the given predictions.
+
+    - __str__() -> str:
+        Return the name of the evaluation metric as a string.
+    """
+    name: str = None
+
+    def evaluate(self, **params) -> float:
+        """
+        Evaluate the given predictions.
+
+        Parameters:
+        - params: The parameters required for the evaluation.
+
+        Returns:
+        - score: The evaluation score.
+        """
+        raise NotImplementedError("The 'evaluate' method must be implemented in subclasses.")
+
+    def __str__(self):
+        return self.name
 
 class Writer(ABC):
     """

@@ -38,10 +38,10 @@ print(importance)
 # to-do we need to formulate a unified way to present the importance(explanation)
 for explanation in importance:
     ground_truth = None # to-do I am not sure where the ground truth should come from
-    print(evaluate_explanation(explanation, groud_truth, CorrelationOfFeatureImportance()))
-    print(evaluate_explanation(explanation, groud_truth, CosineSimilarity()))
-    print(evaluate_explanation(explanation, groud_truth, EuclideanDistance()))
-    print(evaluate_explanation(explanation, groud_truth, TopKRankingMatch(k=2)))
+    print(evaluate_explanation(explanation, ground_truth, CorrelationOfFeatureImportance()))
+    print(evaluate_explanation(explanation, ground_truth, CosineSimilarity()))
+    print(evaluate_explanation(explanation, ground_truth, EuclideanDistance()))
+    print(evaluate_explanation(explanation, ground_truth, TopKRankingMatch(k=2)))
 
 
 from xai_framework.writers.local_writer import LocalWriter

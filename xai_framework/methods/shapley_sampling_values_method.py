@@ -1,11 +1,13 @@
+
+
 import numpy as np
 import pandas as pd
 from sklearn.base import BaseEstimator
 import shap
 from xai_framework.types import ExplainabilityMethod
 
-class ShapMethod(ExplainabilityMethod):
-    name = "Shap"
+class ShapleySampling(ExplainabilityMethod):
+    name = "Shapley sampling values"
 
     def explain(self, X: np.ndarray, y: np.ndarray, model: BaseEstimator, column_names=None, categorical_columns=None, prediction_type="None") -> np.ndarray:
 
@@ -21,9 +23,9 @@ class ShapMethod(ExplainabilityMethod):
         """
 
         # TODO: Is this ok?
-        masker = shap.maskers.Independent(X)
-        print(masker)
-        explainer = shap.Explainer(model.predict, masker)
+        #masker = shap.maskers.Independent(X)
+        #print(masker)
+        explainer = shap.SamplingExplainer(model.predict, X)
         print(explainer)
         print(type(explainer(X).values))
         return explainer(X).values
